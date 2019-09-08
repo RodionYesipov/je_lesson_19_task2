@@ -6,13 +6,11 @@ import java.util.List;
  * */
 public class Main {
     private static void outputAllFiles(File file) {
-        boolean isDirectory = false;
         List<File> files = Arrays.asList(file.listFiles());
         for (File f : files) {
             if (!f.isDirectory()) {
                 System.out.println(f.getAbsolutePath());
             } else {
-                isDirectory = true;
                 outputAllFiles(f);
             }
         }
